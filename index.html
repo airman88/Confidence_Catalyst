@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confidence Catalyst | Women's Wellness Coaching</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
     <style>
@@ -12,7 +13,7 @@
             --hot-pink: #ff007f;
             --deep-purple: #2e004f;
             --soft-pink: #ffb6c1;
-            --light-pink: ##ffe8f7;
+            --light-pink:#fac2e5f2;
             --gold: #d4af37;
             --black: #1a1a1a;
             --white: #ffffff;
@@ -122,7 +123,7 @@
         /* --- Program Cards --- */
         .programs {
             padding: 100px 10%;
-            background: var(--black);
+            background: #fac2e5f2;
             text-align: center;
         }
 
@@ -164,7 +165,7 @@
 /* --- About Section Styling --- */
         .about {
             padding: 100px 10%;
-            background: #ffe8f7; 
+            background: #fac2e5f2; 
             text-align: center;
         }
 
@@ -243,7 +244,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-style: italic;
-            color: var(--white);
+            color: var(--black);
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -270,37 +271,44 @@
                 font-size: 2.5rem;
             }
         }
-        /* --- Footer --- */
-        footer {
-            padding: 50px 10%;
-            background: #000;
-            text-align: center;
-            border-top: 1px solid #333;
-        }
+footer {
+    padding: 60px 10%;
+    background: var(--black); 
+    text-align: center;
+    border-top: 2px solid var(--gold); 
+}
 
-        .socials {
-            margin-bottom: 20px;
-        }
+.socials {
+    margin-bottom: 25px;
+}
 
-        .socials a {
-            color: var(--white);
-            font-size: 1.5rem;
-            margin: 0 15px;
-            transition: 0.3s;
-        }
+.socials a {
+    color: var(--white);
+    font-size: 2rem; /* Made them slightly larger for easier tapping on mobile/tablet */
+    margin: 0 20px;
+    transition: transform 0.3s, color 0.3s;
+    display: inline-block;
+}
 
-        .socials a:hover {
-            color: var(--gold);
-        }
+/* Hover effects for that premium feel */
+.socials a:hover {
+    color: var(--hot-pink);
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
 
+footer p {
+    font-size: 0.9rem;
+    color: var(--soft-pink); /* Using your new darker pink for the copyright text */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
         /* Animations */
-        .reveal {
+.reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: 1s all ease;
         }
-
-        .reveal.active {
+.reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
@@ -349,6 +357,12 @@
         display: block;
         cursor: pointer;
         z-index: 1001; /* Stay above the menu */
+    }
+}
+        @media (max-width: 768px) {
+    .socials a {
+        margin: 0 15px;
+        font-size: 1.8rem;
     }
 }
     </style>

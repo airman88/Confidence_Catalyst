@@ -12,6 +12,7 @@
             --hot-pink: #ff007f;
             --deep-purple: #2e004f;
             --soft-pink: #ffb6c1;
+            --light-pink: ##ffe8f7;
             --gold: #d4af37;
             --black: #1a1a1a;
             --white: #ffffff;
@@ -23,13 +24,13 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(#ffffff);
-            color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+     body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffe8f7; 
+    color: var(--black);       
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
@@ -303,19 +304,70 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* --- Tablet Adjustments (769px to 1024px) --- */
+@media (max-width: 1024px) {
+    nav {
+        padding: 20px 5%; /* Reduce side padding to save space */
+    }
+    
+    .nav-links li {
+        margin-left: 15px; /* Squeeze links closer together */
+    }
+}
+
+/* --- Mobile Styling (768px and below) --- */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%; /* Hidden off-screen */
+        top: 0;
+        flex-direction: column;
+        background: var(--black);
+        width: 70%; /* Slide out covers most of the screen */
+        height: 100vh;
+        justify-content: center; /* Center links vertically */
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0; /* Slide into view */
+    }
+
+    .nav-links li {
+        margin: 25px 0;
+        margin-left: 0; /* Reset desktop margin */
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    /* Menu Toggle Button */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        z-index: 1001; /* Stay above the menu */
+    }
+}
     </style>
 </head>
 <body>
+<nav>
+    <div class="logo">Confidence Catalyst</div>
+    
+    <div class="menu-toggle" id="mobile-menu" style="font-size: 2rem; color: var(--gold);">
+        ☰
+    </div>
 
-    <nav>
-        <div class="logo">Confidence Catalyst</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#contact">Join Now</a></li>
-        </ul>
-    </nav>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
     <section class="hero" id="home">
         <h1>Unleash Your Inner Winner!</h1>
